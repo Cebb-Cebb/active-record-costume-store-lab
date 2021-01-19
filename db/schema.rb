@@ -17,15 +17,15 @@ ActiveRecord::Schema.define(version: 3) do
     t.string "location"
     t.string "costume_inventory"
     t.string "num_of_employees"
-    t.string "still_in_business"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean "still_in_business"
+    t.datetime "opening_time"
+    t.datetime "closing_time"
   end
 
-  create_table "customes", force: :cascade do |t|
+  create_table "costumes", force: :cascade do |t|
     t.string "name"
     t.integer "price"
-    t.string "url"
+    t.string "image_url"
     t.string "size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -37,9 +37,9 @@ ActiveRecord::Schema.define(version: 3) do
     t.string "theme"
     t.integer "price"
     t.boolean "family_friendly"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.text "description"
+    t.datetime "opening_date"
+    t.datetime "closing_date"
   end
 
 end
