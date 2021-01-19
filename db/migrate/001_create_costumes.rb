@@ -1,7 +1,20 @@
 # Create a class and inherit from ActiveRecord::Migration
-class CreateCostumes < ActiveRecord::Migration[5.2]
+# By convention, the class name should match the part of the
+# file name after the number, so in this case:
+# 002_create_costumes.rb becomes class CreateCostumes
+
+# While the migration was plural, the model would be singular:
+
+# Define a change method in which to do the migration
+# In this change method, create columns with the correct names and 
+# value types according to the spec
+
+# !!! Before you run rake db:migrate, remember to fill out the other migration files -- 
+# otherwise you'll get an error resulting from the blank migration files.
+
+class CreateCustomes < ActiveRecord::Migration[5.2]  
     def change
-        create_table :costumes do |t|
+        create_table :customes do |t|
             t.string :name 
             t.integer :price
             t.string :url
@@ -10,18 +23,6 @@ class CreateCostumes < ActiveRecord::Migration[5.2]
         end 
     end 
 end 
-
-# By convention, the class name should match the part of the
-# file name after the number, so in this case:
-# 002_create_costumes.rb becomes class CreateCostumes
-
-# Define a change method in which to do the migration
-# In this change method, create columns with the correct names and 
-# value types according to the spec
-
-# !!! Before you run rake db:migrate, remember to fill out the other migration files -- 
-# otherwise you'll get an error resulting from the blank migration files.
-# db/migrate/01_create_students.rb
-
+ 
 
 
